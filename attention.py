@@ -30,4 +30,16 @@ class SingleHeadAttention(nn.Module):
         self.v_proj = nn.Linear(hidden_dim, head_dim, bias=False)
         self.o_proj = nn.Linear(head_dim, hidden_dim, bias=False)
         
-    def forward()
+    def forward(self, x: torch.Tensor, causal: bool = True)->torch.Tensor:
+        q = self.q_proj(x)
+        k = self.k_proj(x)
+        v = self.v_proj(x)
+        attn_fn = causal_attention if causal else naive_attention
+        attn_output = attn_fn(q,k,v)
+        output = self.o_proj(attn_output)
+        return output
+    
+class MultiHeadAttention(nn.Module):
+        
+    
+    
