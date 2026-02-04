@@ -40,6 +40,17 @@ class SingleHeadAttention(nn.Module):
         return output
     
 class MultiHeadAttention(nn.Module):
+    def __init__(self, hidden_dim:int , num_heads:int):
+        super().__init__()
+        assert hidden_dim % num_heads == 0
+        self.num_heads = num_heads
+        self.head_dim = hidden_dim//num_heads
+        self.hidden_dim = hidden_dim
+        self.q_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.k_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.v_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.o_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
+    
         
     
     
