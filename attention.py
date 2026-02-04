@@ -50,7 +50,13 @@ class MultiHeadAttention(nn.Module):
         self.k_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
         self.v_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
         self.o_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
-    
-        
+    def forward(self, x: torch.Tensor, causal: bool = True)-> torch.Tensor:
+        batch, seq_len, _ = x.shape
+        q = self.q_proj(x).view(batch, seq_len, self.num_heads, self.head_dim)
+        k = self.k_proj(x).view(batch, seq_len, self.num_heads, self.head_dim)
+        v = self.v_proj(x).view(batch, seq_len, self.num_heads, self.head_dim)
+        q = q.transpose(1, 2)
+        k = k.transpose(1, 2)
+        v = v.transpose(1, 2)
     
     
