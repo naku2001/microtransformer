@@ -1,6 +1,6 @@
 # MicroTransformer
 
-<img src="microtransformer.png" alt="MicroTransformee Illustration" height="200" width = "400">
+<img src="microtransformer.png" alt="MicroTransformee Illustration" height="200" width = "900">
 
 
 
