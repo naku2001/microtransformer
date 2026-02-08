@@ -1,4 +1,4 @@
-# MicroTransformee
+# MicroTransformer
 
 ![MicroTransformee Illustration](./assets/microtransformee.png)
 
