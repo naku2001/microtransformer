@@ -19,8 +19,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/microtransformee.git
-cd microtransformee
+git clone https://github.com/naku2001/microtransformer.git
+cd microtransformer
 
 # Install dependencies
 pip install -r requirements.txt
