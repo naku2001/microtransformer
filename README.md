@@ -1,6 +1,6 @@
 # MicroTransformer
 
-![MicroTransformee Illustration](microtransformer.png)
+![MicroTransformee Illustration](microtransformer.png height="200")
 
 **MicroTransformer** is a small, simplified transformer built for **educational purposes**. It’s designed to help learners understand the core concepts of transformer architectures, like attention and multi-head mechanisms, without the complexity of full-scale models.  
 
